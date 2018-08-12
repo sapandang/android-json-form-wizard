@@ -10,6 +10,18 @@ public class ViewState implements Parcelable {
 
     private boolean mIsSavedInstance;
 
+    public static final Creator<ViewState> CREATOR = new Creator<ViewState>() {
+        @Override
+        public ViewState createFromParcel(Parcel in) {
+            return new ViewState(in);
+        }
+
+        @Override
+        public ViewState[] newArray(int size) {
+            return new ViewState[size];
+        }
+    };
+
     public boolean isSavedInstance() {
         return mIsSavedInstance;
     }
